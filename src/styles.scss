@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
+
+*, input, ::placeholder {
+    font-family: Roboto;
+}
+
+body {
+    background-color: rgb(12, 23, 30);
+    color: #fff;
+}
+
+a {
+    color: inherit;    
+}
+
+a:hover {
+    text-decoration: none;
+}
