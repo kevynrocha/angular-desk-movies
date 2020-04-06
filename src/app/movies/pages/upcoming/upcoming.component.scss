@@ -1,31 +1,56 @@
 .img-banner img {
-    width: 100%;
-    height: 474px;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 474px;
+  object-fit: cover;
+  object-position: center;
 }
 
+.movie-box {
+  cursor: pointer;
+}
 
 .popular-movies {
-    h4 {
-        margin: 50px 0;
-        font-size: 40px;
+  h4 {
+    margin: 50px 0;
+    font-size: 40px;
+  }
+
+  .movie-box {
+    margin-bottom: 50px;
+
+    .img-box {
+      overflow: hidden;
     }
 
     img {
-        width: 150px;
+      width: 150px;
+
+      &:hover {
+        transition: 0.25s;
+        transform: scale(1.2);
+        z-index: 1;
+      }
     }
 
-    .movie-box {
-        margin-bottom: 30px;
+    p {
+      margin: 15px 0;
+      font-size: 15px;
+    }
 
-        p {
-            margin: 15px 0;
-            font-size: 15px;
-        }
-        
-        ngb-rating {
-            color: red;
-        }
-    }    
+    ngb-rating {
+      color: red;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .popular-movies .movie-box {
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
 }

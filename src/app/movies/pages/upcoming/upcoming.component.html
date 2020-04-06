@@ -8,14 +8,19 @@
 
 <section class="popular-movies">
     <div class="container">
-        <h4>Em breve</h4>
+        <h4>Populares</h4>
         <div class="row">
-            <div class="col-12 col-xl-2 text-center" *ngFor='let movie of movies' [routerLink]="['/movie', movie.id]">
+            <div class="col-lg-2 col-md-3 text-center" *ngFor='let movie of movies' [routerLink]="['/movie', movie.id]">
                 <div class="movie-box">
-                    <img class="img-film" src="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.backdrop_path}}" [alt]="movie.title">
+                    <div class="img-box">
+                        <img *ngIf="movie.backdrop_path" class="img-film"
+                            src="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.backdrop_path}}"
+                            [alt]="movie.title">
+                    </div>
                     <p>{{ movie.title }}</p>
-                    <ngb-rating [rate]="movie.vote_average" [readonly]="true" placement="right" ngbTooltip="{{movie.vote_average}}"></ngb-rating>
-                    <span>{{ movie.release_date }}</span>
+                    <ngb-rating [rate]="movie.vote_average" [readonly]="true" placement="right"
+                        ngbTooltip="{{movie.vote_average}}"></ngb-rating>
+                    <p>{{ movie.release_date }}</p>
                 </div>
             </div>
         </div>
